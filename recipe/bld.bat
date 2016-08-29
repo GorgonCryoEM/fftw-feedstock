@@ -1,19 +1,6 @@
-#!/usr/bin/env bash
+set -e
 
-# Depending on our platform, shared libraries end with either .so or .dylib
-if [[ `uname` == 'Darwin' ]]; then
-    export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
-    export DYLIB_EXT=dylib
-    export CC=clang
-    export CXX=clang++
-    export CXXFLAGS="-stdlib=libc++"
-    export CXX_LDFLAGS="-stdlib=libc++"
-else
-    export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
-    export DYLIB_EXT=so
-    export CC=gcc
-    export CXX=g++
-fi
+REM cmake -G "NMake Makefiles" -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% -D CMAKE_BUILD_TYPE=Release .
 
 export LDFLAGS="-L${PREFIX}/lib"
 export CFLAGS="${CFLAGS} -I${PREFIX}/include"
