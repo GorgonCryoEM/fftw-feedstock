@@ -4,3 +4,7 @@ travis:
 appveyor:
   secure:
     BINSTAR_TOKEN: 4ef5IUakGqqw7GSfuIp93Q4MdAC1VnweE1kFVAOUs6ThPDQWBqNpGaq6ZuEbX1FL
+
+channels:
+  targets:
+  - [gorgoncryoem, dependency]
