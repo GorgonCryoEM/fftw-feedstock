@@ -16,14 +16,32 @@ environment:
   CONDA_PY: "27"
   BINSTAR_TOKEN:
     # The BINSTAR_TOKEN secure variable. This is defined canonically in conda-forge.yml.
-    secure: MP4hZYylDyUWEsrt3u3cod2sbFeRwUziH02mvQOdbjsTO/l1yIxDkP/76rSIjcGC
+    secure: 4ef5IUakGqqw7GSfuIp93Q4MdAC1VnweE1kFVAOUs6ThPDQWBqNpGaq6ZuEbX1FL
 
   matrix:
     - TARGET_ARCH: x86
       CONDA_PERL: 5.20.3.1
+      CONDA_PY: 27
 
     - TARGET_ARCH: x64
       CONDA_PERL: 5.20.3.1
+      CONDA_PY: 27
+
+    - TARGET_ARCH: x86
+      CONDA_PERL: 5.20.3.1
+      CONDA_PY: 34
+
+    - TARGET_ARCH: x64
+      CONDA_PERL: 5.20.3.1
+      CONDA_PY: 34
+
+    - TARGET_ARCH: x86
+      CONDA_PERL: 5.20.3.1
+      CONDA_PY: 35
+
+    - TARGET_ARCH: x64
+      CONDA_PERL: 5.20.3.1
+      CONDA_PY: 35
 
 
 # We always use a 64-bit machine, but can build x86 distributions
